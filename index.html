@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css"> -->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>           
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
+
+	<script>
+		function switchIcons(id1, id2) {
+			var icon1 = document.getElementById(id1);
+			var icon2 = document.getElementById(id2);
+
+			if (icon1.style.display == 'none') {
+				icon1.style.display ='block';
+				icon2.style.display = 'none';
+			} else {
+				icon1.style.display = 'none';
+				icon2.style.display = 'block';
+			}
+		}
+
+		$(document).ready(function() {
+
+			/*$('.element').on('mouseenter', function() {
+				var darken = 'linear-gradient(rgba(0, 0, 0, 0.65),rgba(0, 0, 0, 0.65)),url("bg.png") no-repeat';
+				$('.element').css('background', darken);
+				$('.element').css('background-size', 'cover');
+
+			});
+			$('.element').on('mouseleave', function() {
+				var lighten = 'url("bg.png") no-repeat';
+				$('.element').css('background', lighten);
+				$('.element').css('background-size', 'cover');
+
+			});*/
+
+		
+			
+
+			$('#sliderInput1').on('mousemove', function() {
+				var value = $('#slider1 span.value').text();
+				if (value == '')
+					$('#value1').text(0);
+				else
+					$('#value1').text('+' + value);
+			});
+
+			$('#sliderInput2').on('mousemove', function() {
+				var value = $('#slider2 span.value').text();
+				if (value == '')
+					$('#value2').text(0);
+				else
+					$('#value2').text('+' + value);
+			});
+
+			$('input[type=range]').on('input', function(e){
+			var min = e.target.min,
+				max = e.target.max,
+				val = e.target.value;
+
+				$(e.target).css({'backgroundSize': (val - min) * 100 / (max - min) + '% 100%'});
+			}).trigger('input');
+		});
+
+		
+	</script>
+</head>
+<body>
+	<div class="element">
+		<div class="overlay">
+			<a onclick="switchIcons('add', 'done');">
+				<div class="button">
+					
+					<i id="add" class="material-icons white">add</i>
+					<i id="done" class="material-icons white">done</i>	
+					
+				</div>
+			</a>
+			<div id="slider1" class="slider">
+				<div class="text">Text1</div>
+				<div id="value1">0</div>
+				<div>
+					<input id="sliderInput1" type="range" min="0" max="400" value="0">
+				</div>
+			</div>
+			<div id="slider2" class="slider">
+				<div class="text">Text2</div>
+				<div id="value2">0</div>
+				<div>
+					<input id="sliderInput2" type="range" min="0" max="4000" value="0">
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

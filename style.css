@@ -1,0 +1,121 @@
+body {
+	font-size: 35pt;
+	color: #fff;
+}
+
+.element {
+	background-image: url("bg.png");
+	background-repeat: no-repeat;
+	background-size: cover; 
+	width: 500px;
+	height: 500px;
+	margin: 10px auto;
+}
+
+.element .overlay {
+	display: block;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    background: rgba(0,0,0,.65);
+    -moz-transition: all 1s;
+    -webkit-transition: all 1s;
+    transition: all 1s;
+}
+
+.element:hover .overlay {
+    opacity: 1;
+}
+
+.button {
+	text-align: center;
+	background: url("circle.png") no-repeat;
+	background-size: cover;
+	width: 50px;
+	height: 50px;
+	cursor: pointer;
+	position: absolute;
+	top: 20px;
+	left: calc(50% - 25px);
+}
+
+i {	padding-top: 25%; }
+
+
+#add { display: block; }
+
+#done { display: none; }
+
+span.thumb { display: none; }
+
+.slider {
+	padding: 10% 12%;
+}
+
+.text {
+	display: inline;
+}
+
+#value1, #value2 {
+	display: inline;
+	border: 2px solid;
+	border-radius: 8px;
+	padding: 10px 20px;
+	float: right;
+}
+
+.white {
+	color: #fff;
+}
+
+input[type=range] {
+    margin: auto;
+    outline: none;
+    padding: 0;
+    width: 100%;
+    height: 10px;
+    background-color: #fff;
+    
+    background-image: linear-gradient(#25c5cc, #25c5cc);
+
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    cursor: pointer;
+    -webkit-appearance: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    box-shadow: none;
+    border: none;
+    background: transparent;
+    -webkit-appearance: none;
+}
+
+input[type=range]::-moz-range-track {
+    box-shadow: none;
+    border: none;
+    background: transparent;
+}
+
+input[type=range]::-moz-focus-outer {
+    border: 0;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    width: 30px;
+    height: 30px;
+    border: 0;
+    background: #25c5cc;
+    border-radius: 100%;
+    box-shadow: 0 0 1px 0px rgba(0,0,0,0.1);
+    -webkit-appearance: none;
+}
+
+input[type=range]::-moz-range-thumb {
+    width: 14px;
+    height: 14px;
+    border: 0;
+    background: #fff;
+    border-radius: 100%;
+    box-shadow: 0 0 1px 0px rgba(0,0,0,0.1);
+}
